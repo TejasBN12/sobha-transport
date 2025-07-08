@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Maps Directions</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Get Directions</h2>
+  <input type="text" id="pickup" placeholder="Enter Pickup Location" />
+  <input type="text" id="drop" placeholder="Enter Drop Location" />
+  <button onclick="openGoogleMaps()">Open in Google Maps</button>
+</div>
+
+<script>
+  function openGoogleMaps() {
+    const pickup = document.getElementById('pickup').value.trim();
+    const drop = document.getElementById('drop').value.trim();
+
+    if (pickup && drop) {
+      const url = https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(pickup)}&destination=${encodeURIComponent(drop)};
+      // Open in new tab (works in mobile and desktop)
+      window.open(url, '_blank');
+    } else {
+      alert("Please enter both pickup and drop locations.");
+    }
+  }
+</script>
+
+</body>
+</html>
